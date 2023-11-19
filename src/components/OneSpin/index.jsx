@@ -8,6 +8,7 @@ import texture from "./textures/mainspin.png";
 export default function OneSpin({
   set = [1, 0],
   animationSpeed = 1000,
+  position = [0, 0, 0],
   onReady = () => {},
 }) {
   const objRef = useRef();
@@ -17,7 +18,7 @@ export default function OneSpin({
   const springProps = useSpring({
     config: { duration: animationSpeed, easing: easings.easeInOutSine },
     to: {
-      rotation: normalize(set[0]) - Math.PI * 2 * set[1],
+      rotation: normalize(set[0]) + Math.PI * 2 * set[1],
     },
     from: {
       rotation: 0,
@@ -48,7 +49,7 @@ export default function OneSpin({
 
   return (
     <group ref={objRef}>
-      <mesh>
+      <mesh position={position}>
         <cylinderGeometry attach="geometry" args={[1, 1, 1]} />
         <meshStandardMaterial map={textureMap} />
       </mesh>
