@@ -1,11 +1,13 @@
-import OneSpin from "./OneSpin";
+import React, { useRef, useState } from 'react'
+import OneSpin from './OneSpin'
 
 export default function SpinLine({
-  set = [1, 3, 5],
+  set = [null, null, null],
   rounds = 5,
   firstAnimationTime = 1000,
   timesBetween = 500,
   position,
+  OnSpinReady
 }) {
   return (
     <group position={position}>
@@ -20,10 +22,12 @@ export default function SpinLine({
         animationSpeed={firstAnimationTime + timesBetween}
       />
       <OneSpin
+        debug
         set={[set[2], rounds]}
         position={[0, -1.05, 0]}
         animationSpeed={firstAnimationTime + timesBetween * 2}
+        onReady={OnSpinReady}
       />
     </group>
-  );
+  )
 }
