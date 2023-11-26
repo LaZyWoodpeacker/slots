@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
-import { normalize, subfromvector } from './OneSpin/tools'
-import { useFrame, useLoader } from '@react-three/fiber'
+import { subfromvector } from '../tools/tools'
+import { useFrame } from '@react-three/fiber'
 import { useSpring, easings } from '@react-spring/three'
 import {
   Selection,
@@ -31,12 +31,14 @@ export default function LeverArm(props) {
   })
 
   const onSpin = () => {
-    setSpinning(true)
-    props.OnSpin()
+    if (!(spinning || props.busy)) {
+      setSpinning(true)
+      props.OnSpin()
+    }
   }
 
   useFrame((state, delta) => {
-    if (spinning) {
+    if (spinning || props.busy) {
       groupRef.current.rotation.x =
         springProps.rotation.animation.values[0]._value
     } else {

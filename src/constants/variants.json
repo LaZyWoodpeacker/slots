@@ -1,0 +1,56 @@
+{
+  "variants": [
+    {
+      "name": "1",
+      "price": 0,
+      "type": "selectall",
+      "combines": [
+        [2, 3, 4, 5, 6, 7],
+        [2, 3, 4, 5, 6, 7],
+        [2, 3, 4, 5, 6, 7]
+      ]
+    },
+    {
+      "name": "1 x CHEERY",
+      "price": 2,
+      "type": "selectall",
+      "combines": [[2, 3, 4, 5, 6, 7], [2, 3, 4, 5, 6, 7], [1]]
+    },
+    {
+      "name": "2 x CHEERY",
+      "price": 5,
+      "type": "selectall",
+      "combines": [[2, 3, 4, 5, 6, 7], [1], [1]]
+    },
+    {
+      "name": "3 x CHEERY",
+      "price": 10,
+      "type": "direct",
+      "combines": [[1], [1], [1]]
+    },
+    {
+      "name": "3 x ANY FRUIT",
+      "price": 20,
+      "type": "direct",
+      "combines": [[4], [4], [4]]
+    },
+    {
+      "name": "BARS",
+      "price": 40,
+      "type": "direct",
+      "combines": [[5], [5], [5]]
+    },
+    {
+      "name": "3BARS",
+      "price": 200,
+      "type": "direct",
+      "combines": [[6], [6], [6]]
+    },
+    {
+      "name": "JACKPOT",
+      "price": 800,
+      "type": "direct",
+      "combines": [[7], [7], [7]]
+    }
+  ]
+}

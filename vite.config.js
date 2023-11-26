@@ -1,7 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react()]
+  // build: {
+  //   rollupOptions: {
+  //     external: ['three'],
+  //     output: {
+  //       paths: {
+  //         three: 'https://unpkg.com/three@0.158.0/build/three.js'
+  //       }
+  //     }
+  //   }
+  // }
 })
